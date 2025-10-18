@@ -9,3 +9,4 @@ This is a simple website that displays a map showing the Alliance map for the Wo
 
 ## How to customize
 To edit the names of the houses that are taken, simply edit the array called `housingData` in the code.
+Index.html anpassen dann Commit Changes
