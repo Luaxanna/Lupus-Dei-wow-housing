@@ -103,7 +103,27 @@ function removeGridOverlay() {
         gridOverlay.remove();
     }
 }
+function addMerchantMarker(x, y, scaleX, scaleY, offsetX, offsetY) {
+    const mapBackground = document.getElementById('mapBackground');
 
+    const marker = document.createElement('img');
+    marker.src = 'merchant.png';
+    marker.className = 'merchant';
+
+    // Scale position from original coordinates
+    const scaledX = offsetX + (x * scaleX);
+    const scaledY = offsetY + (y * scaleY);
+
+    // Position marker (centered)
+    marker.style.position = 'absolute';
+    marker.style.left = (scaledX - 32) + 'px';  // 64px marker, so offset by half
+    marker.style.top = (scaledY - 32) + 'px';
+    marker.style.width = '64px';
+    marker.style.height = '64px';
+    marker.style.pointerEvents = 'none'; // so it doesn't block clicks
+
+    mapBackground.appendChild(marker);
+}
 // Toggle grid with keyboard shortcut (G key)
 document.addEventListener('keydown', function(event) {
     if (event.key === 'g' || event.key === 'G') {
