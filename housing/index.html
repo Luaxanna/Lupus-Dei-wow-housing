@@ -188,6 +188,13 @@
                         plot.style.top = scaledY + 'px';
                     }
                 });
+                const merchantLocations = [
+                    { x: 2050, y: 950 }
+                ];
+
+                merchantLocations.forEach(loc => {
+                    addMerchantMarker(loc.x, loc.y, scaleX, scaleY, offsetX, offsetY);
+                });
             };
             
             mapImage.src = 'map.jpg';
