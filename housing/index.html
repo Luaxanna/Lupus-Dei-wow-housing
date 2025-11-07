@@ -83,7 +83,11 @@
             47: "",
             48: "",
             49: "",
-            50: ""
+            50: "",
+            51: "",
+            52: "",
+            53: "",
+            54: ""
         };
 
         // House plot positions loaded from external JSON file
@@ -94,16 +98,7 @@
             try {
                 const response = await fetch('plot-positions.json');
                 const data = await response.json();
-                plotPositions = data.plotPositions;
-                mapImageData = data.referenceImage;
-                console.log('Plot positions loaded successfully:', data);
-            } catch (error) {
-                console.error('Error loading plot positions:', error);
-                // Fallback to empty array if JSON fails to load
-                plotPositions = [];
-            }
-        }
-
+... (133 Zeilen verbleibend)
         function createHousePlots() {
             const mapBackground = document.getElementById('mapBackground');
             
